@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+
+
+
+<script>
+function hello() {
+
+
+
+var e = document.getElementById("movies");
+var strUser = e.options[e.selectedIndex].text;
+
+
+window.location.href="theatres.html?item="+strUser
+}
+
+
+</script>
+
+
+
+
+
+</head>
+<fom>
+
+<body>
+<!--<select id="moviemap">-->
+              <center> LIST of Movies in selected City, please select the theatre 
+		</center>
+
+		<p id="paragraph" class='specialParagraph' name="para" 
+		th:each="dropDownItem : ${moviemap}" > 
+			 
+
+ 	<center><span id="spanID"	
+
+			  		th:value="${dropDownItem.value}" 
+					
+
+					  th:text="${dropDownItem.key}">
+
+					
+	</span>
+<!--<button id="hellobutton" onclick=hello(this);>Show Theatres</button>-->
+
+				
+			
+
+			</p> 
+	
+<center><select id="movies" name="movies" onchange="hello()">
+		<option th:each="dropDownItem : ${moviemap}" 
+		 th:text="${dropDownItem.key}" />
+	</select></center>
+
+
+</body>
+</form>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+function hello()
+{
+var e = document.getElementById("text");
+var strUser = e.value
+window.location.href="test.html?item="+strUser
+}
+</script>
+</head>
+
+
+
+
+<body>
+	<center>Welcome here are the seats Available<center>
+
+	<p th:each="dropDownItem : ${movieMap1}" > 
+			 
+
+ 	<center><span		
+
+			  		th:value="${dropDownItem.value}" 
+					
+
+					  th:text="${dropDownItem.key}">
+
+					
+	</span>
+	
+			
+
+			</p> 
+
+<center>
+		<!--	<button id="hellobutton" onclick=hello();>Book Show</button>-->
+</center>		
+		
+	<br>
+	Please enter the number of tickets you want to book. 
+	<br>				
+   <input type="text" id="text" name="" value=""><br><br>
+  <input type="submit" value="Get Price" onclick=hello();>
+
+</body>
+</html>

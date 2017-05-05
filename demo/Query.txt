@@ -1,0 +1,50 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+function hello()
+{
+
+window.location.href="test.html"
+}
+</script>
+</head>
+
+
+
+
+<body>
+	<center>Welcome here are the seats Available<center>
+
+	<p th:each="dropDownItem : ${movieMap1}" > 
+			 
+
+ 	<center><span		
+
+			  		th:value="${dropDownItem.value}" 
+					
+
+					  th:text="${dropDownItem.key}">
+
+					
+	</span>
+	
+			
+
+			</p> 
+
+<center>
+
+<button id="hellobutton" onclick=hello();>Book Show</button>
+<form>		
+  <input type="text" name="Enter the number of tickets ">
+<input type="submit" value="Submit">
+ </form> 
+		
+
+
+</center>		
+			
+</body>
+</html>

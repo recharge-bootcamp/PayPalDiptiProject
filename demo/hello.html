@@ -1,0 +1,31 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+
+function loadPage()
+{
+
+
+var e = document.getElementById("cities");
+var strUser = e.options[e.selectedIndex].text;
+
+window.location.href= "showmovies.html?item="+strUser;
+
+
+} 
+
+
+</script>
+</head>
+
+<body>
+	
+	<center><p>Please select from cities</p>
+	<select id="cities" name="cities" onchange="loadPage()">
+		<option th:each="dropDownItem : ${dropDownItems}" 
+		 th:text="${dropDownItem.key}" />
+	</select></center>
+</body>
+</html>
